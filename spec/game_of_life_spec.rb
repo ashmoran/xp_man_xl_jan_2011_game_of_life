@@ -10,11 +10,11 @@ class Grid
   end
   
   def cell_state(x, y)
-    :dead
+    @cell_state
   end
   
   def make_alive(x, y)
-    :alive
+    @cell_state = :alive
   end
 end
 
