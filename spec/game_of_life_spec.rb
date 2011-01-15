@@ -41,3 +41,14 @@ describe "A 1x1 Grid" do
     end
   end
 end
+
+describe "A 2x2 Grid" do
+  let(:grid) { Grid.new(2, 2) }
+  
+  it "has all dead cells" do
+    grid.cell_state(1,1).should eq :dead
+    grid.cell_state(1,2).should eq :dead
+    grid.cell_state(2,1).should eq :dead
+    grid.cell_state(2,2).should eq :dead
+  end
+end
