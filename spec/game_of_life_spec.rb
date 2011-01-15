@@ -16,7 +16,7 @@ class Game
   end
   
   def grid_representation
-    
+    grid.representation
   end
 end
 
@@ -43,7 +43,7 @@ describe Game, "with custom grid" do
     mock("Grid", 
           all_cells_empty?: true,
           make_alive: :ignored_value,
-          grid_representation: grid_representation)
+          representation: grid_representation)
   }
   let(:game) { Game.new(grid) }
   
