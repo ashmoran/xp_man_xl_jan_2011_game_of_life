@@ -6,7 +6,7 @@ class Cell
     @alive = starts_alive
   end
   
-  def evolve(*)
+  def evolve(number_of_neighbours)
     @alive = false
   end
   
