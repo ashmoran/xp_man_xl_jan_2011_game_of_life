@@ -9,6 +9,7 @@ class Game
   
   def make_alive(x, y)
     @grid.make_alive(x, y)
+    nil
   end
   
   def over?
