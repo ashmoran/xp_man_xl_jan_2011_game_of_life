@@ -3,7 +3,7 @@ require 'game_of_life'
 
 class Grid
   def width
-    1
+    @width
   end
 end
 
