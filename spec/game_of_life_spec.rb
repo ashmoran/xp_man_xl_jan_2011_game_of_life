@@ -2,6 +2,7 @@ require 'spec_helper'
 require 'game_of_life'
 
 class Grid
+  attr_reader :width, :height
   
   def initialize(width, height)
     @width = width
