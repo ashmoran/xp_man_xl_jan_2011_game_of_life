@@ -4,6 +4,7 @@ require 'game_of_life'
 class Game
   def initialize(grid)
     @over = true
+    @grid = grid
   end
   
   def make_alive(*)
@@ -11,7 +12,7 @@ class Game
   end
   
   def over?
-    @over
+    @grid.all_cells_empty?
   end
 end
 
