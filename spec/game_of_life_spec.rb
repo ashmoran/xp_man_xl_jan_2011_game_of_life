@@ -67,5 +67,13 @@ describe "game_of_life" do
     it "is dead" do
       cell.should_not be_alive
     end
+    
+    context "with 3 neighbours" do
+      it "springs into life" do
+        expect {
+          cell.evolve(3)
+        }.to change { cell.alive }.from(true).to(false)
+      end
+    end
   end
 end
