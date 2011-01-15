@@ -16,8 +16,12 @@ class Cell
 end
 
 describe "game_of_life" do
+  let(:cell) { Cell.new(initial_alive_state) }
+  
   describe "an alive", Cell do
-    let(:cell) { Cell.new(true) }
+    # let(:cell) { Cell.new(true) }
+    let(:initial_alive_state) { true }
+    
     it "is alive" do
       cell.should be_alive
     end
@@ -31,6 +35,8 @@ describe "game_of_life" do
   end
   
   describe "a dead", Cell do
+    # let(:initial_alive_state) { true }
+    
     it "is dead" do
       Cell.new(false).should_not be_alive
     end
