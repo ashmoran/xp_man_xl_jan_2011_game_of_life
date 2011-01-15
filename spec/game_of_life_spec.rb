@@ -7,7 +7,6 @@ class Cell
   end
   
   def evolve(number_of_neighbours)
-    
     @alive = number_of_neighbours == 2
   end
   
