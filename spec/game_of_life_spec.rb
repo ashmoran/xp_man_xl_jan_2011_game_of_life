@@ -34,13 +34,17 @@ describe Game, pending: true do
 end
   
 describe Game, "with custom grid" do
-  let(:grid) { mock("Grid") }
+  let(:grid) { mock("Grid", all_cells_empty?: true) }
   let(:game) { Game.new(grid) }
   
   describe "over?" do
     it "is determined by whether the grid is empty" do
       grid.should_receive(:all_cells_empty?)
       game.over?
+    end
+    
+    it "returns the status" do
+      game.over.should be_true
     end
   end
 end
