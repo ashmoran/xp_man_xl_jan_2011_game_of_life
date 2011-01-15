@@ -8,6 +8,10 @@ class Grid
     @width = width
     @height = height
   end
+  
+  def cell_state(x, y)
+    :dead
+  end
 end
 
 describe "A 1x1 Grid" do
