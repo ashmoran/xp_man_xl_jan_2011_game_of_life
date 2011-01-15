@@ -13,6 +13,6 @@ describe Game do
   context "without setting any cells alive" do
     it "is over straight away" do
       game.should be_over
-    end    
+    end
   end
 end
