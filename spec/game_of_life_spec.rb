@@ -14,6 +14,10 @@ class Game
   def over?
     @grid.all_cells_empty?
   end
+  
+  def grid_representation
+    
+  end
 end
 
 describe Game, pending: true do
