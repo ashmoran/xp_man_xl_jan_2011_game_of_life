@@ -44,7 +44,7 @@ describe Game, "with custom grid" do
     end
     
     it "returns the status" do
-      game.over.should be_true
+      game.over?.should eq true
     end
   end
 end
