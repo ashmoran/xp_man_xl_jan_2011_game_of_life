@@ -6,6 +6,10 @@ class Cell
     @alive = starts_alive
   end
   
+  def evolve
+    @alive = false
+  end
+  
   def alive?
     @alive
   end
