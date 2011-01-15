@@ -12,7 +12,7 @@ class Grid
   end
   
   def cell_state(x, y)
-    @cell_states[[x, y]]
+    @cell_states["#{x}, #{y}"]
     # @cell_state
   end
   
