@@ -7,6 +7,7 @@ class Grid
   def initialize(width, height)
     @width = width
     @height = height
+    @cell_state = :dead
   end
   
   def cell_state(x, y)
