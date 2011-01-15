@@ -2,12 +2,16 @@ require 'spec_helper'
 require 'game_of_life'
 
 class Game
+  def initialize
+    @over = true
+  end
+  
   def make_alive(*)
-    
+    @over = false
   end
   
   def over?
-    true
+    @over
   end
 end
 
