@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'game_of_life'
 
 class Cell
-  def initialize starts_alive
+  def initialize(starts_alive)
     @alive = starts_alive
   end
   
