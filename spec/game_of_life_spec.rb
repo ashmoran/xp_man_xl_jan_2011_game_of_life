@@ -17,8 +17,9 @@ end
 
 describe "game_of_life" do
   describe "an alive", Cell do
+    let(:cell) { Cell.new(true) }
     it "is alive" do
-      Cell.new(true).should be_alive
+      cell.should be_alive
     end
     
     context "with less than 2 neighbour" do
