@@ -12,7 +12,7 @@ class Grid
   end
   
   def height
-    1
+    @height
   end
 end
 
