@@ -8,7 +8,7 @@ class Game
   end
   
   def make_alive(*)
-    @over = false
+    @grid.make_alive
   end
   
   def over?
