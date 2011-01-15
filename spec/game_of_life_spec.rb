@@ -15,6 +15,8 @@ describe "game_of_life" do
   end
   
   describe "a dead", Cell do
-    
+    it "is dead" do
+      Cell.new(true).should_not be_alive
+    end
   end
 end
