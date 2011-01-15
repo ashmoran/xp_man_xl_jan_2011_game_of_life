@@ -13,6 +13,6 @@ end
 
 describe "A 1x1 Grid" do
   it "has width of 1" do
-    Grid.new(1, 1).width.should eq 1
+    Grid.new(1, 2).width.should eq 1
   end
 end
