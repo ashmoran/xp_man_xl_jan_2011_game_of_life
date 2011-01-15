@@ -20,4 +20,8 @@ describe "A 1x1 Grid" do
   it "has height of 1" do
     grid.height.should eq 1
   end
+  
+  it "has one dead cell" do
+    grid.cell_state(1, 1).should eq :alive
+  end
 end
