@@ -34,7 +34,13 @@ describe Game, pending: true do
 end
   
 describe Game, "with custom grid" do
-  let(:grid) { mock("Grid", all_cells_empty?: true, make_alive: :ignored_value) }
+  let(:grid_representation) { mock("grid_representation") }
+  let(:grid) {
+    mock("Grid", 
+          all_cells_empty?: true,
+          make_alive: :ignored_value,
+          grid_representation: grid_representation)
+  }
   let(:game) { Game.new(grid) }
   
   describe "#over?" do
@@ -56,6 +62,18 @@ describe Game, "with custom grid" do
     
     it "returns nil" do
       game.make_alive(1, 2).should be_nil
+    end
+  end
+  
+  describe "#grid_representation" do
+    it "gets the representation from the grid" do
+      game.grid_representation.should eq grid_representation
+    end
+  end
+  
+  describe "#start" do
+    it "does something" do
+      pending
     end
   end
 end
