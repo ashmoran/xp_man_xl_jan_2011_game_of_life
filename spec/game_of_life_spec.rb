@@ -3,7 +3,7 @@ require 'game_of_life'
 
 class Game
   def over?
-    
+    true
   end
 end
 
