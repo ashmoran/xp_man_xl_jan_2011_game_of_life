@@ -12,6 +12,10 @@ class Grid
   def cell_state(x, y)
     :dead
   end
+  
+  def make_alive(x, y)
+    :alive
+  end
 end
 
 describe "A 1x1 Grid" do
