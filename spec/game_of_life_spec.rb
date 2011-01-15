@@ -17,7 +17,7 @@ class Grid
   end
   
   def make_alive(x, y)
-    @cell_states = :alive
+    @cell_states["#{x}, #{y}"] = :alive
   end
 end
 
