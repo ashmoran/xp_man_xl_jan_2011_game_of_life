@@ -57,6 +57,10 @@ describe "A 2x2 Grid" do
     it "has one live cell" do
       grid.make_alive(1, 2)
       grid.cell_state(1, 2).should eq :alive
+      
+      grid.cell_state(1,1).should eq :dead
+      grid.cell_state(2,1).should eq :dead
+      grid.cell_state(2,2).should eq :dead      
     end
   end
 end
