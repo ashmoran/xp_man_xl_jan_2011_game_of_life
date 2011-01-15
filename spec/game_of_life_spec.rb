@@ -53,5 +53,9 @@ describe Game, "with custom grid" do
       grid.should_receive(:make_alive).with(1, 2)
       game.make_alive(1, 2)
     end
+    
+    it "returns nil" do
+      game.make_alive(1, 2)
+    end
   end
 end
