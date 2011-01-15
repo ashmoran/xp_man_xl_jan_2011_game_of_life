@@ -35,10 +35,10 @@ describe "game_of_life" do
   end
   
   describe "a dead", Cell do
-    # let(:initial_alive_state) { true }
+    let(:initial_alive_state) { false }
     
     it "is dead" do
-      Cell.new(false).should_not be_alive
+      cell.should_not be_alive
     end
   end
 end
