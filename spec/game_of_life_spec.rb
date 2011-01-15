@@ -8,14 +8,6 @@ class Grid
     @width = width
     @height = height
   end
-  
-  # def width
-  #   @width
-  # end
-  # 
-  # def height
-  #   @height
-  # end
 end
 
 describe "A 1x1 Grid" do
