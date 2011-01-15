@@ -15,7 +15,13 @@ class Grid
   end
   
   def make_alive(x, y)
-    @cell_states["#{x}, #{y}"] = :alive
+    @cell_states[point(x, y)] = :alive
+  end
+  
+  private
+  
+  def point(x, y)
+    "#{x}, #{y}"
   end
 end
 
