@@ -15,3 +15,10 @@ describe "game_of_life" do
     end
   end
 end
+
+
+class Cell
+  def alive?
+    false
+  end
+end
