@@ -7,7 +7,7 @@ class Game
   end
 end
 
-describe "GameOfLife" do
+describe Game do
   let(:game) { Game.new }
   
   it "has all empty cells" do
