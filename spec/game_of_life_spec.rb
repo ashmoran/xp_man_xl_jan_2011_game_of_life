@@ -10,7 +10,9 @@ end
 describe Game do
   let(:game) { Game.new }
   
-  it "has all empty cells" do
-    game.should be_over
+  context "without setting any cells alive" do
+    it "is over straight away" do
+      game.should be_over
+    end    
   end
 end
