@@ -3,7 +3,7 @@ require 'game_of_life'
 
 class Cell
   def initialize starts_alive
-    s
+    
   end
   
   def alive?
