@@ -2,6 +2,8 @@ require 'spec_helper'
 require 'game_of_life'
 
 class Cell
+  ALIVE_EVOLUTION_FUNCTION = ->(number_of_neighbours) { number_of_neighbours == 2 || number_of_neighbours == 3 }
+  
   def initialize(starts_alive)
     @alive = starts_alive
   end
@@ -16,7 +18,7 @@ class Cell
   
   def evolution_function
     if @alive
-      ->(number_of_neighbours) { number_of_neighbours == 2 || number_of_neighbours == 3 }
+      ALIVE_EVOLUTION_FUNCTION
     else
       ->(number_of_neighbours) { number_of_neighbours == 3 }
     end
