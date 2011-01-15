@@ -3,7 +3,6 @@ require 'game_of_life'
 
 class Game
   def initialize(grid)
-    @over = true
     @grid = grid
   end
   
