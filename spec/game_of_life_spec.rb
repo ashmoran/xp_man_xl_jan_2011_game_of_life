@@ -25,11 +25,18 @@ describe "game_of_life" do
       cell.should be_alive
     end
     
-    context "with less than 2 neighbour" do
+    context "with 0 neighbours" do
       it "dies when it evolves" do
         cell.evolve(0)
         cell.should_not be_alive
-      end      
+      end
+    end
+    
+    context "with 1 neighbour" do
+      it "dies when it evolves" do
+        cell.evolve(1)
+        cell.should_not be_alive
+      end
     end
   end
   
