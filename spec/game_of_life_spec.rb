@@ -2,6 +2,10 @@ require 'spec_helper'
 require 'game_of_life'
 
 class Game
+  def make_alive(*)
+    
+  end
+  
   def over?
     true
   end
