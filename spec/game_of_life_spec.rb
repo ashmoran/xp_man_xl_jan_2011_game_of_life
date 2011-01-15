@@ -7,13 +7,11 @@ class Grid
   def initialize(width, height)
     @width = width
     @height = height
-    @cell_state = :dead
     @cell_states = Hash.new(:dead)
   end
   
   def cell_state(x, y)
     @cell_states["#{x}, #{y}"]
-    # @cell_state
   end
   
   def make_alive(x, y)
