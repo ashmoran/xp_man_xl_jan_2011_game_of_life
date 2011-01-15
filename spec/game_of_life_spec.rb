@@ -19,7 +19,6 @@ describe "game_of_life" do
   let(:cell) { Cell.new(initial_alive_state) }
   
   describe "an alive", Cell do
-    # let(:cell) { Cell.new(true) }
     let(:initial_alive_state) { true }
     
     it "is alive" do
