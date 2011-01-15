@@ -14,7 +14,7 @@ end
 describe "game_of_life" do
   describe "an alive", Cell do
     it "is alive" do
-      Cell.new("hello").should be_alive
+      Cell.new(true).should be_alive
     end
   end
   
