@@ -3,11 +3,11 @@ require 'game_of_life'
 
 class Cell
   def initialize starts_alive
-    
+    @is_alive = starts_alive
   end
   
   def alive?
-    true
+    @is_alive
   end
 end
 
