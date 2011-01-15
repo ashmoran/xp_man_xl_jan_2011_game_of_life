@@ -7,8 +7,8 @@ class Game
     @grid = grid
   end
   
-  def make_alive(*)
-    @grid.make_alive
+  def make_alive(x, y)
+    @grid.make_alive(x, y)
   end
   
   def over?
