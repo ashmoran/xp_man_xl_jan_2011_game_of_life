@@ -4,6 +4,7 @@ require 'game_of_life'
 class Grid
   def initialize(width, height)
     @width = width
+    @height = height
   end
   
   def width
