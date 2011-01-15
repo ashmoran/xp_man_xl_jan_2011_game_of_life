@@ -22,6 +22,6 @@ describe "A 1x1 Grid" do
   end
   
   it "has one dead cell" do
-    grid.cell_state(1, 1).should eq :alive
+    grid.cell_state(1, 1).should eq :dead
   end
 end
