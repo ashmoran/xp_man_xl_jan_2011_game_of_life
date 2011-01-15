@@ -72,7 +72,7 @@ describe "game_of_life" do
       it "springs into life" do
         expect {
           cell.evolve(3)
-        }.to change { cell.alive }.from(true).to(false)
+        }.to change { cell.alive? }.from(true).to(false)
       end
     end
   end
