@@ -38,6 +38,14 @@ describe "game_of_life" do
         cell.should_not be_alive
       end
     end
+    
+    context "with 2 neighbours" do
+      it "stays alive when it evolves" do
+        cell.evolve(2)
+        cell.should be_alive
+      end
+    end
+    
     context "with 4 neighbours" do
       it "dies when it evolves" do
         cell.evolve(4)
