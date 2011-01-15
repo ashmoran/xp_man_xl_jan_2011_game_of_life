@@ -24,7 +24,6 @@ describe "game_of_life" do
     
     context "with less than 2 neighbour" do
       it "dies when it evolves" do
-        cell = Cell.new(true)
         cell.evolve(0)
         cell.should_not be_alive
       end      
