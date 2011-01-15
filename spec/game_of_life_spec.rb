@@ -2,6 +2,10 @@ require 'spec_helper'
 require 'game_of_life'
 
 class Grid
+  def initialize(width, height)
+    @width = width
+  end
+  
   def width
     @width
   end
