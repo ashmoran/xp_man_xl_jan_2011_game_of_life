@@ -28,4 +28,11 @@ describe "A 1x1 Grid" do
   it "has one dead cell" do
     grid.cell_state(1, 1).should eq :dead
   end
+  
+  context "after setting a cell to alive" do
+    it "has one live cell" do
+      grid.make_alive(1, 1)
+      grid.cell_state(1, 1).should eq :alive
+    end
+  end
 end
