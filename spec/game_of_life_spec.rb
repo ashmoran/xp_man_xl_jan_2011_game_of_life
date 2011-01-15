@@ -19,6 +19,6 @@ end
 
 class Cell
   def alive?
-    false
+    true
   end
 end
