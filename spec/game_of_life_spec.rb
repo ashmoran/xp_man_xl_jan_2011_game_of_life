@@ -10,6 +10,9 @@ class Grid
     @width
   end
   
+  def height
+    1
+  end
 end
 
 describe "A 1x1 Grid" do
