@@ -7,7 +7,12 @@ class Cell
   end
   
   def evolve(number_of_neighbours)
-    @alive = (number_of_neighbours == 2 && @alive) || number_of_neighbours == 3
+    @alive =
+      if @alive
+        number_of_neighbours == 2 || number_of_neighbours == 3
+      else
+        number_of_neighbours == 3
+      end
   end
   
   def alive?
