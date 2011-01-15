@@ -31,3 +31,15 @@ describe Game do
     end
   end
 end
+  
+describe Game, "with custom grid" do
+  let(:grid) { mock("Grid") }
+  let(:game) { Game.new(grid) }
+  
+  describe "over?" do
+    it "is determined by whether the grid is empty" do
+      grid.should_receive(:all_cells_empty?)
+      game.over?
+    end
+  end
+end
