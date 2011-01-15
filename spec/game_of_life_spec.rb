@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'game_of_life'
 
 class Game
-  def initialize
+  def initialize(grid)
     @over = true
   end
   
