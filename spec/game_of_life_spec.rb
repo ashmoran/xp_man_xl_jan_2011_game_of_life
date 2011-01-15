@@ -7,16 +7,19 @@ class Cell
   end
   
   def evolve(number_of_neighbours)
-    @alive =
-      if @alive
-        number_of_neighbours == 2 || number_of_neighbours == 3
-      else
-        number_of_neighbours == 3
-      end
+    @alive = evolution_function[number_of_neighbours]
   end
   
   def alive?
     @alive
+  end
+  
+  def evolution_function
+    if @alive
+      ->(number_of_neighbours) { number_of_neighbours == 2 || number_of_neighbours == 3 }
+    else
+      ->(number_of_neighbours) { number_of_neighbours == 3 }
+    end
   end
 end
 
