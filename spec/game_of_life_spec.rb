@@ -55,7 +55,7 @@ describe Game, "with custom grid" do
     end
     
     it "returns nil" do
-      game.make_alive(1, 2)
+      game.make_alive(1, 2).should be_nil
     end
   end
 end
