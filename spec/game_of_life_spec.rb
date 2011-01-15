@@ -2,6 +2,9 @@ require 'spec_helper'
 require 'game_of_life'
 
 class Cell
+  def initialize
+  end
+  
   def alive?
     true
   end
