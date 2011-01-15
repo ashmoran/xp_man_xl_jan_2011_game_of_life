@@ -47,4 +47,11 @@ describe Game, "with custom grid" do
       game.over?.should eq true
     end
   end
+  
+  describe "make_alive" do
+    it "tells the grid to make a cell alive" do
+      grid.should_receive(:make_alive).with(1, 2)
+      game.make_alive(1, 2)
+    end
+  end
 end
