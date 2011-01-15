@@ -37,7 +37,7 @@ describe Game, "with custom grid" do
   let(:grid) { mock("Grid", all_cells_empty?: true, make_alive: :ignored_value) }
   let(:game) { Game.new(grid) }
   
-  describe "over?" do
+  describe "#over?" do
     it "is determined by whether the grid is empty" do
       grid.should_receive(:all_cells_empty?)
       game.over?
@@ -48,7 +48,7 @@ describe Game, "with custom grid" do
     end
   end
   
-  describe "make_alive" do
+  describe "#make_alive" do
     it "tells the grid to make a cell alive" do
       grid.should_receive(:make_alive).with(1, 2)
       game.make_alive(1, 2)
