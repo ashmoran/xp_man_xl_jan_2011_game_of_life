@@ -15,4 +15,11 @@ describe Game do
       game.should be_over
     end
   end
+  
+  context "after setting one cell alive" do
+    it "is not over straight away" do
+      game.make_alive(1, 1)
+      game.should_not be_over
+    end
+  end
 end
