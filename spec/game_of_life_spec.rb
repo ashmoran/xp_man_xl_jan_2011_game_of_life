@@ -35,7 +35,7 @@ describe Game, pending: true do
 end
   
 describe Game, "with custom grid" do
-  let(:grid) { mock("Grid", all_cells_empty?: true, make_alive: :unimportant) }
+  let(:grid) { mock("Grid", all_cells_empty?: true, make_alive: :ignored_value) }
   let(:game) { Game.new(grid) }
   
   describe "over?" do
