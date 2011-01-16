@@ -43,8 +43,8 @@ end
 describe Grid, "class" do
   describe "#new" do
     it "creates Cells" do
-      Cell.should_receive(:new).exactly(4).times
-      Grid.new
+      Cell.should_receive(:new).exactly(6).times
+      Grid.new(2, 3)
     end
   end
 end
