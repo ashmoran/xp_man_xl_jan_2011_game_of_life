@@ -58,7 +58,7 @@ class Grid
     cell_neighbours << @cells[y - 1][x - 1] if x - 1 >= 0 && y - 1 >= 0
     
     # Top-right
-    cell_neighbours << @cells[y + 1][x - 1] if x - 1 >= 0
+    cell_neighbours << @cells[y + 1][x - 1] if y + 1 < height && x - 1 >= 0
     
     cell_neighbours.reject { |cell_neighbour| cell_neighbour.nil? }
   end
