@@ -34,10 +34,14 @@ class Grid
   def all_cells_empty?
     true
   end
+  
+  def make_alive(x, y)
+    
+  end
 end
 
 class Cell
-
+  
 end
 
 describe Grid, "class" do
@@ -52,7 +56,7 @@ end
 describe Grid do
   let(:cell_0_0) { mock("Cell (0,0)") }
   let(:cell_0_1) { mock("Cell (0,1)") }
-  let(:cell_1_0) { mock("Cell (1,0)", make_alive: nil) }
+  let(:cell_1_0) { mock("Cell (1,0)", become_alive: nil) }
   let(:cell_1_1) { mock("Cell (1,1)") }
   
   before(:each) do
