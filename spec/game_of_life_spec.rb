@@ -44,6 +44,10 @@ class Grid
     true
   end
   
+  def neighbours(x, y)
+    [ ]
+  end
+  
   def make_alive(x, y)
     @cells[y][x].become_alive
   end
