@@ -26,7 +26,7 @@ end
 
 class Grid
   def initialize(width, height)
-    @cells = (0...height).map { |x| [ (0...width).map { |y| Cell.new } ] }
+    @cells = (0...height).map { |x| (0...width).map { |y| Cell.new } }
   end
   
   def all_cells_empty?
