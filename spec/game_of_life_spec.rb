@@ -49,7 +49,7 @@ class Grid
     
     cell_neighbours << @cells[y][x + 1] if valid_point?(x + 1, y)
     cell_neighbours << @cells[y + 1][x] if valid_point?(x, y + 1)
-    cell_neighbours << @cells[y + 1][x + 1] if x + 1 < width && y + 1 < height
+    cell_neighbours << @cells[y + 1][x + 1] if valid_point?(x + 1, y + 1)
     cell_neighbours << @cells[y + 1][x - 1] if y + 1 < height && x - 1 >= 0
     cell_neighbours << @cells[y - 1][x + 1] if x + 1 < width && y - 1 >= 0
     cell_neighbours << @cells[y][x - 1] if x - 1 >= 0
