@@ -58,7 +58,7 @@ describe Grid do
   let(:cell_1_1) { mock("Cell (1,1)") }
   
   before(:each) do
-    Cell.stub(:new).and_return(cell_0_0, cell_0_1, cell_1_0, cell_1_1)
+    Cell.stub(:new).and_return(cell_0_0, cell_1_0, cell_0_1, cell_1_1)
   end
   let(:grid) { Grid.new(2, 2) }
 
