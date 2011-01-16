@@ -156,15 +156,17 @@ end
 describe Grid do
   let(:cell_0_0) { mock("Cell (0,0)") }
   let(:cell_0_1) { mock("Cell (0,1)") }
+  let(:cell_0_2) { mock("Cell (0,2)") }
   let(:cell_1_0) { mock("Cell (1,0)", become_alive: nil) }
   let(:cell_1_1) { mock("Cell (1,1)") }
+  let(:cell_1_2) { mock("Cell (1,2)") }
   
   before(:each) do
     # We expect the Grid to treat the cells according to the order they are created
     Cell.stub(:new).and_return(cell_0_0, cell_1_0, cell_0_1, cell_1_1)
   end
   
-  let(:grid) { Grid.new(2, 3) }
+  let(:grid) { Grid.new(3, 2) }
 
   it "should have all cells empty" do
     grid.all_cells_empty?.should be_true
