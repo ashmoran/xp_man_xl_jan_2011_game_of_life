@@ -1,24 +1,24 @@
 class Cell
   def initialize
-    @alive = false
+    @state = alive
   end
   
   def evolve(neighbours)
-    @alive = evolution_function[neighbours.count { |neighbour| neighbour.alive? } ]
+    @state = evolution_function[neighbours.count { |neighbour| neighbour.alive? } ] ? :alive : :dead
   end
     
   def become_alive
-    @alive = true
+    @state = :alive
   end
   
   def alive?
-    @alive
+    @state == :alive
   end
   
   private
   
   def evolution_function
-    if @alive
+    if @state == :alive
       ->(neighbours) { neighbours == 2 || neighbours == 3 }
     else
       ->(neighbours) { neighbours == 3 }
