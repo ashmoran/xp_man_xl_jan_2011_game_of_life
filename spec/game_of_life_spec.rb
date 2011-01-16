@@ -95,7 +95,7 @@ class Grid
     x < width &&
     x >= 0 && 
     y < height &&
-    y > 0
+    y >= 0
   end
 end
 
