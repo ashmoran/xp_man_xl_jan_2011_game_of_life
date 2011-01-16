@@ -34,7 +34,7 @@ class Grid
   end
   
   def make_alive(x, y)
-    @cells[0][1].become_alive
+    @cells[y][x].become_alive
   end
 end
 
