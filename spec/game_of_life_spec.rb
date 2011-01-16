@@ -188,7 +188,7 @@ describe Grid do
   let(:cloned_grid) { mock("Cloned Grid", evolve_from: nil) }
   
   before(:each) do
-    Grid.stub(clone_from_cells: cloned_grid)
+    Grid.stub(clone_from: cloned_grid)
     
     # We expect the Grid to treat the cells according to the order they are created
     Cell.stub(:new).and_return(cell_0_0, cell_1_0, cell_2_0, cell_0_1, cell_1_1, cell_2_1)
