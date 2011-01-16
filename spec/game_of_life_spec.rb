@@ -48,7 +48,7 @@ class Grid
     cell_neighbours = [ ]
     
     neighbour_points(x, y).each do |neighbour_x, neighbour_y|
-      collect_cell(cell_neighbours, x + 1, y)
+      collect_cell(cell_neighbours, neighbour_x, neighbour_y)
     end
     # collect_cell(cell_neighbours, x + 1, y)
     # collect_cell(cell_neighbours, x, y + 1)
