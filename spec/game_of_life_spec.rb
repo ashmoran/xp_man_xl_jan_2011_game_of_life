@@ -65,6 +65,65 @@ describe Cell do
       cell.should be_alive
     end
   end
+  
+  describe "evolve" do
+    context "a living cell" do
+      before(:each) { cell.become_alive }
+      
+      context "with 0 neighbours" do
+        it "dies when it evolves" do
+          cell.evolve(0)
+          cell.should_not be_alive
+        end
+      end
+
+      context "with 1 neighbour" do
+        it "dies when it evolves" do
+          cell.evolve(1)
+          cell.should_not be_alive
+        end
+      end
+
+      context "with 2 neighbours" do
+        it "stays alive when it evolves" do
+          cell.evolve(2)
+          cell.should be_alive
+        end
+      end
+
+      context "with 3 neighbours" do
+        it "stays alive when it evolves" do
+          cell.evolve(3)
+          cell.should be_alive
+        end
+      end
+
+      context "with 4 neighbours" do
+        it "dies when it evolves" do
+          cell.evolve(4)
+          cell.should_not be_alive
+        end
+      end
+    end
+    
+    context "a dead cell" do
+      context "with 2 neighbours" do
+        it "springs into life" do
+          expect {
+            cell.evolve(2)
+          }.to_not change { cell.alive? }.from(false).to(true)
+        end
+      end
+
+      context "with 3 neighbours" do
+        it "springs into life" do
+          expect {
+            cell.evolve(3)
+          }.to change { cell.alive? }.from(false).to(true)
+        end
+      end
+    end
+  end
 end
 
 describe Grid, "class" do
