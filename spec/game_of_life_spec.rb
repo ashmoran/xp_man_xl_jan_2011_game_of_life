@@ -43,16 +43,26 @@ class Cell
     @alive = false
   end
   
-  def evolve(neighbours)
-    
+  def evolve(number_of_neighbours)
+    @alive = evolution_function[number_of_neighbours]
   end
-  
+    
   def become_alive
     @alive = true
   end
   
   def alive?
     @alive
+  end
+  
+  private
+  
+  def evolution_function
+    if @alive
+      ->(neighbours) { neighbours == 2 || neighbours == 3 }
+    else
+      ->(neighbours) { neighbours == 3 }
+    end
   end
 end
 
