@@ -170,8 +170,8 @@ describe Grid, "class" do
     end
   end
   
-  describe "#clone_from_cells" do
-    it "does something" do
+  describe "#clone_from" do
+    it "creates a new grid" do
       pending
     end
   end
@@ -209,9 +209,7 @@ describe Grid do
   
   describe "#evolve" do
     it "clones the grid" do
-      Grid.should_receive(:clone_from_cells).with(
-        [[cell_0_0, cell_1_0, cell_2_0], [cell_0_1, cell_1_1, cell_2_1]]
-      )
+      Grid.should_receive(:clone_from).with(grid)
       grid.evolve
     end
     
