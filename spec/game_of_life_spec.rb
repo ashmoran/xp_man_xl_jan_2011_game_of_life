@@ -186,6 +186,10 @@ describe Grid do
       )
       grid.evolve
     end
+    
+    it "returns the new grid" do
+      evolve
+    end
   end
 end
   
