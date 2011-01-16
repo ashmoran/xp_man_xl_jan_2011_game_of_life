@@ -27,7 +27,9 @@ end
 class Grid
   class << self
     def clone_from(reference_grid)
-      new(reference_grid.width, reference_grid.height)
+      new_grid = new(reference_grid.width, reference_grid.height)
+      new_grid.update_from_representation(reference_grid.representation)
+      new_grid
     end
   end
   
