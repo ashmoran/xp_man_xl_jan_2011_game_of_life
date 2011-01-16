@@ -296,6 +296,7 @@ describe Grid do
   
   describe "#neighbours" do
     it "returns neighbours of the top-left corner" do
+      p grid.neighbours(0, 0)
       grid.neighbours(0, 0).should =~ [ cell_1_0, cell_0_1, cell_1_1 ]
     end
     
