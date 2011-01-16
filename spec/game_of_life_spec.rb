@@ -42,6 +42,14 @@ class Cell
   
 end
 
+describe Cell do
+  let(:cell) { Cell.new }
+  
+  it "is not alive when first created" do
+    cell.should_not be_alive
+  end
+end
+
 describe Grid, "class" do
   describe "#new" do
     it "creates Cells" do
