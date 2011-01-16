@@ -37,7 +37,7 @@ class Grid
   
   def initialize(width, height)
     @width, @height = width, height
-    @cells = (0...height).map { |x| (0...width).map { |y| Cell.new } }
+    @cells = (0...@height).map { |x| (0...@width).map { |y| Cell.new } }
   end
   
   def all_cells_empty?
@@ -287,7 +287,12 @@ describe Grid do
   
   describe "#representation" do
     it "returns an array describing the grid" do
-      pending
+      grid.make_alive(2, 0)
+      grid.make_alive(1, 1)
+      grid.representation.should eq [
+        [true, false, true],
+        [false, true, false]
+      ]
     end
   end
 end
