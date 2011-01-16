@@ -26,9 +26,7 @@ end
 
 class Grid
   def initialize(width, height)
-    (width * height).times do
-      Cell.new
-    end
+    @cells = (0..height).map { |x| [ (0..width).map { |y| Cell.new } ] }
   end
   
   def all_cells_empty?
