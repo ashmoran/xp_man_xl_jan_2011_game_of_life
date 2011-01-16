@@ -386,7 +386,7 @@ describe "Game of Life" do
   let(:game) { Game.new(grid) }
   
   it "plays a Blinker" do
-    [[1, 3], [2, 3], [3, 3]].each do |x, y|
+    [[1, 2], [2, 2], [3, 2]].each do |x, y|
       game.make_alive(x, y)
     end
     
