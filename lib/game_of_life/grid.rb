@@ -11,7 +11,7 @@ class Grid
   
   def initialize(width, height)
     @width, @height = width, height
-    @cells = (0...@height).map { |x| (0...@width).map { |y| Cell.new } }
+    @cells = generate_cells
   end
   
   def all_cells_empty?
@@ -72,6 +72,14 @@ class Grid
   end
   
   private
+  
+  def generate_cells
+    (0...@height).map {
+      (0...@width).map {
+        Cell.new
+      }
+    }
+  end
   
   def valid_point?(x, y)
     (0 ... width).include?(x) && (0 ... height).include?(y)
