@@ -175,13 +175,13 @@ describe Grid do
   describe "#make_alive" do
     it "makes a cell alive" do
       cell_1_0.should_receive(:become_alive)
-      grid.make_alive(2, 1)
+      grid.make_alive(1, 0)
     end      
   end
   
   describe "#evolve" do
     pending
-    # Grid.should_receive(:clone).with(2, 2, )
+    # Grid.should_receive(:clone).with(3, 2, )
   end
 end
   
