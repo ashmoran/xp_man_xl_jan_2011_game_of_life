@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'game_of_life'
 
 describe "Game of Life" do
   let(:grid) { Grid.new(5, 5) }
