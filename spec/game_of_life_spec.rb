@@ -52,10 +52,10 @@ class Grid
     cell_neighbours << @cells[y + 1][x] rescue nil
     cell_neighbours << @cells[y + 1][x + 1] rescue nil
 
-    # # Bottom-right
-    # cell_neighbours << @cells[y][x - 1] rescue nil
-    # cell_neighbours << @cells[y - 1][x] rescue nil
-    # cell_neighbours << @cells[y - 1][x - 1] rescue nil
+    # Bottom-right
+    cell_neighbours << @cells[y][x - 1] rescue nil
+    cell_neighbours << @cells[y - 1][x] rescue nil
+    cell_neighbours << @cells[y - 1][x - 1] rescue nil
     
     cell_neighbours.reject { |cell_neighbour| cell_neighbour.nil? }
   end
