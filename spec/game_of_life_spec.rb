@@ -92,6 +92,10 @@ describe Cell do
   
   # This code largely copied from the pairing session with Jimmbob
   describe "evolve" do
+    before(:each) do
+      pending "Needs to accept cells, not a number?"
+    end
+    
     context "a living cell" do
       before(:each) { cell.become_alive }
       
@@ -161,6 +165,12 @@ describe Grid, "class" do
       Grid.new(2, 3)
     end
   end
+  
+  describe "#clone_from_cells" do
+    it "does something" do
+      pending
+    end
+  end
 end
 
 describe Grid do
@@ -213,13 +223,19 @@ describe Grid do
   
   describe "#evolve_from" do
     let(:reference_grid) { mock("Reference Grid", neighbours: [ :foo ]) }
-    it "asks the reference grid for the neighbours of each cell" do
+    it "tell each cell to evolve" do
       reference_grid.should_receive(:neighbours).with(0, 0).and_return(:neighbours_of_0_0)
       reference_grid.should_receive(:neighbours).with(1, 0).and_return(:neighbours_of_1_0)
       reference_grid.should_receive(:neighbours).with(2, 0).and_return(:neighbours_of_2_0)
       reference_grid.should_receive(:neighbours).with(0, 1).and_return(:neighbours_of_0_1)
       reference_grid.should_receive(:neighbours).with(1, 1).and_return(:neighbours_of_1_1)
       reference_grid.should_receive(:neighbours).with(2, 1).and_return(:neighbours_of_2_1)
+      cell_0_0.should_receive(:evolve).with(:neighbours_of_0_0)
+      cell_1_0.should_receive(:evolve).with(:neighbours_of_1_0)
+      cell_2_0.should_receive(:evolve).with(:neighbours_of_2_0)
+      cell_0_1.should_receive(:evolve).with(:neighbours_of_0_1)
+      cell_1_1.should_receive(:evolve).with(:neighbours_of_1_1)
+      cell_2_1.should_receive(:evolve).with(:neighbours_of_2_1)
       grid.evolve_from(reference_grid)
     end
   end
