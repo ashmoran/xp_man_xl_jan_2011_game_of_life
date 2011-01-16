@@ -52,6 +52,7 @@ describe Game, "with custom grid" do
     )
   }
   let(:grid_representation) { mock("grid_representation") }
+  let(:evolved_grid_representation) { mock("evolved_grid_representation") }
   
   let(:game) { Game.new(grid) }
   
