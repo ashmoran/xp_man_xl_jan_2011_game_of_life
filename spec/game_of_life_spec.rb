@@ -62,7 +62,7 @@ class Grid
     cell_neighbours
   end
   
-  def neighbour_points
+  def neighbour_points(x, y)
     [
       [x + 1, y],
       [x, y + 1],
