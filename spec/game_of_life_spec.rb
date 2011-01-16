@@ -50,6 +50,13 @@ describe Cell do
   it "is not alive when first created" do
     cell.should_not be_alive
   end
+  
+  describe "#become_alive" do
+    it "makes the cell alive" do
+      cell.become_alive
+      cell.should be_alive
+    end
+  end
 end
 
 describe Grid, "class" do
