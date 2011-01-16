@@ -39,7 +39,7 @@ class Grid
   
   def evolve
     Grid.clone_from_cells(@cells).tap do |new_grid|
-      new_grid.evolve_from(1)
+      new_grid.evolve_from(self)
     end
   end
 end
