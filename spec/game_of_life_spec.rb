@@ -301,7 +301,7 @@ describe Grid do
     
     it "returns neighbours of the bottom-right corner" do
       p grid.neighbours(2, 1)
-      grid.neighbours(2, 1).should =~ [ cell_2_1, cell_2_0, cell_1_0 ]
+      grid.neighbours(2, 1).should =~ [ cell_1_1, cell_2_0, cell_1_0 ]
     end
   end
   
