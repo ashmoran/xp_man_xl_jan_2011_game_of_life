@@ -25,6 +25,8 @@ class Game
 end
 
 class Grid
+  attr_reader :width, :height
+  
   class << self
     def clone_from(reference_grid)
       new_grid = new(reference_grid.width, reference_grid.height)
@@ -34,6 +36,7 @@ class Grid
   end
   
   def initialize(width, height)
+    @width, @height = width, height
     @cells = (0...height).map { |x| (0...width).map { |y| Cell.new } }
   end
   
