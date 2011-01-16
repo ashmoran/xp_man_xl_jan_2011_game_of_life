@@ -192,8 +192,7 @@ describe Grid do
     end
     
     it "returns the new grid" do
-      pending
-      grid.evolve
+      grid.evolve.should eq cloned_grid
     end
   end
 end
