@@ -76,8 +76,9 @@ describe Game, "with custom grid" do
   end
   
   describe "#start" do
-    it "does something" do
-      pending
+    it "evolves the game state by evolving the grid" do
+      grid.should_receive(:evolve)
+      game.start
     end
   end
 end
