@@ -92,10 +92,7 @@ class Grid
   private
   
   def valid_point?(x, y)
-    x < width &&
-    x >= 0 && 
-    y < height &&
-    y >= 0
+    (0 ... width).include?(x) && (0 ... height).include?(y)
   end
 end
 
