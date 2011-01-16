@@ -230,13 +230,13 @@ describe Grid do
   
   describe "#width" do
     it "returns the width" do
-      pending
+      grid.width.should eq 3
     end
   end
   
   describe "#height" do
     it "returns the height" do
-      pending
+      grid.height.should eq 2
     end
   end
   
