@@ -216,6 +216,7 @@ describe Grid do
       reference_grid.should_receive(:neighbours).with(0, 1).and_return(:neighbours_of_0_1)
       reference_grid.should_receive(:neighbours).with(1, 1).and_return(:neighbours_of_1_1)
       reference_grid.should_receive(:neighbours).with(2, 1).and_return(:neighbours_of_2_1)
+      grid.evolve_from(reference_grid)
     end
   end
 end
