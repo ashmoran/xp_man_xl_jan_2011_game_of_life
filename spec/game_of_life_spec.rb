@@ -42,6 +42,10 @@ class Grid
       new_grid.evolve_from(self)
     end
   end
+  
+  def evolve_from(reference_grid)
+    
+  end
 end
 
 class Cell
