@@ -36,6 +36,10 @@ class Grid
   def make_alive(x, y)
     @cells[y][x].become_alive
   end
+  
+  def evolve
+    Grid.clone_from_cells(@cells)
+  end
 end
 
 class Cell
