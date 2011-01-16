@@ -46,6 +46,7 @@ class Grid
   
   def neighbours(x, y)
     cell_neighbours = [ ]
+    
     # Top-left
     cell_neighbours << @cells[y][x + 1] rescue nil
     cell_neighbours << @cells[y + 1][x] rescue nil
