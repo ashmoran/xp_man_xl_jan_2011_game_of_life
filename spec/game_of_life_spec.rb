@@ -69,7 +69,7 @@ class Grid
   def update_from_representation(representation)
     @cells.each_with_index do |row, y|
       row.each_with_index do |cell, x|
-        cell.make_alive if representation[y][x]
+        cell.become_alive if representation[y][x]
       end      
     end
   end
