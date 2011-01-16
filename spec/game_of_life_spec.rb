@@ -42,15 +42,17 @@ describe Game, pending: true do
 end
   
 describe Game, "with custom grid" do
-  let(:grid_representation) { mock("grid_representation") }
   let(:grid) {
     mock(
       "Grid", 
       all_cells_empty?: true,
       make_alive: :ignored_value,
-      representation: grid_representation
+      representation: grid_representation,
+      evolve: mock("Evolved Grid", representation: evolved_grid_representation)
     )
   }
+  let(:grid_representation) { mock("grid_representation") }
+  
   let(:game) { Game.new(grid) }
   
   describe "#over?" do
