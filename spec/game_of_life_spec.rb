@@ -24,6 +24,14 @@ class Game
   end
 end
 
+class Grid
+  
+end
+
+describe Grid do
+  
+end
+
 describe Game, pending: true do
   let(:game) { Game.new }
   
