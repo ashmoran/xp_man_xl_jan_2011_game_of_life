@@ -195,6 +195,11 @@ describe Grid do
       grid.evolve
     end
     
+    it "tells the cloned grid to evolve from the current state" do
+      cloned_grid.should_receive(:evolve_from).with(grid)
+      grid.evolve
+    end
+    
     it "returns the new grid" do
       grid.evolve.should eq cloned_grid
     end
