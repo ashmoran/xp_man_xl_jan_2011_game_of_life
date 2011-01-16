@@ -61,6 +61,14 @@ class Grid
       end      
     end
   end
+  
+  def representation
+    @cells.map do |row|
+      row.map do |cell|
+        cell.alive?
+      end      
+    end
+  end
 end
 
 class Cell
