@@ -164,7 +164,7 @@ describe Grid do
     Cell.stub(:new).and_return(cell_0_0, cell_1_0, cell_0_1, cell_1_1)
   end
   
-  let(:grid) { Grid.new(2, 2) }
+  let(:grid) { Grid.new(2, 3) }
 
   it "should have all cells empty" do
     grid.all_cells_empty?.should be_true
@@ -175,6 +175,11 @@ describe Grid do
       cell_1_0.should_receive(:become_alive)
       grid.make_alive(1, 0)
     end      
+  end
+  
+  describe "#evolve" do
+    pending
+    # Grid.should_receive(:clone).with(2, 2, )
   end
 end
   
