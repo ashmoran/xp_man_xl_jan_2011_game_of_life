@@ -180,8 +180,11 @@ describe Grid do
   end
   
   describe "#evolve" do
-    pending
-    # Grid.should_receive(:clone).with(3, 2, )
+    it "clones the grid" do
+      Grid.should_receive(:clone_from_cells).with(
+        [[cell_0_0, cell_1_0, cell_2_0], [cell_0_1, cell_1_1, cell_2_1]]
+      )
+    end
   end
 end
   
