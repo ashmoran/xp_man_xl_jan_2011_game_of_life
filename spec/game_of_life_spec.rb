@@ -177,8 +177,9 @@ describe Grid, "class" do
   end
   
   describe "#clone_from" do
+    let(:reference_grid_representation) { mock("Reference Grid Representation") }
     let(:reference_grid) {
-      mock(Grid, width: 3, height: 2, reference_grid_representation: mock("Reference Grid Representation"))
+      mock(Grid, width: 3, height: 2, reference_grid_representation: reference_grid_representation)
     }
     let(:new_grid) { mock(Grid, update_from_representation: nil) }
     
