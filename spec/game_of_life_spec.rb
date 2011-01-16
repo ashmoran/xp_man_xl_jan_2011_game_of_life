@@ -25,8 +25,8 @@ class Game
 end
 
 class Grid
-  def initialize(*)
-    4.times do
+  def initialize(width, height)
+    (width * height).times do
       Cell.new
     end
   end
