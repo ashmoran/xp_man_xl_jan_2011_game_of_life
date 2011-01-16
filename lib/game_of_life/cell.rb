@@ -1,6 +1,6 @@
 class Cell
   def initialize
-    @state = :alive
+    @state = :dead
   end
   
   def evolve(neighbours)
