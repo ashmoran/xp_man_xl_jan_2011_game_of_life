@@ -43,6 +43,10 @@ class Cell
     @alive = false
   end
   
+  def evolve(neighbours)
+    
+  end
+  
   def become_alive
     @alive = true
   end
