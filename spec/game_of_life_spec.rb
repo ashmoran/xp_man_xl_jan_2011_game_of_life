@@ -39,7 +39,9 @@ class Grid
 end
 
 class Cell
-  
+  def alive?
+    
+  end
 end
 
 describe Cell do
