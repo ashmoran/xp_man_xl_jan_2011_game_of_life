@@ -163,7 +163,7 @@ describe Grid do
   
   before(:each) do
     # We expect the Grid to treat the cells according to the order they are created
-    Cell.stub(:new).and_return(cell_0_0, cell_1_0, cell_0_1, cell_1_1)
+    Cell.stub(:new).and_return(cell_0_0, cell_1_0, cell_0_1, cell_1_1, cell_0_2, cell_1_2)
   end
   
   let(:grid) { Grid.new(3, 2) }
