@@ -390,7 +390,7 @@ describe "Game of Life" do
       game.make_alive(x, y)
     end
     
-    game.representation.should eq [
+    game.grid_representation.should eq [
       [ false, false, false, false, false ],
       [ false, false, false, false, false ],
       [ false, true,  true,  true,  false ],
@@ -400,7 +400,7 @@ describe "Game of Life" do
     
     game.start
     
-    game.representation.should eq [
+    game.grid_representation.should eq [
       [ false, false, false, false, false ],
       [ false, false, true,  false, false ],
       [ false, false, true,  false, false ],
@@ -410,7 +410,7 @@ describe "Game of Life" do
     
     game.start
     
-    game.representation.should eq [
+    game.grid_representation.should eq [
       [ false, false, false, false, false ],
       [ false, false, false, false, false ],
       [ false, true,  true,  true,  false ],
