@@ -86,15 +86,13 @@ describe Cell do
       
       context "with 0 neighbours" do
         it "dies when it evolves" do
-          cell.evolve(0)
-          cell.should_not be_alive
+          expect { cell.evolve(0) }.to change { cell.alive? }.from(true).to(false)
         end
       end
 
       context "with 1 neighbour" do
         it "dies when it evolves" do
-          cell.evolve(1)
-          cell.should_not be_alive
+          expect { cell.evolve(1) }.to change { cell.alive? }.from(true).to(false)
         end
       end
 
@@ -114,14 +112,13 @@ describe Cell do
 
       context "with 4 neighbours" do
         it "dies when it evolves" do
-          cell.evolve(4)
-          cell.should_not be_alive
+          expect { cell.evolve(4) }.to change { cell.alive? }.from(true).to(false)
         end
       end
     end
     
     context "a dead cell" do
-      context "with 2 neighbours" do
+      context "with <=2 neighbours" do
         it "stays dead" do
           cell.evolve(2)
           cell.should_not be_alive
@@ -133,6 +130,13 @@ describe Cell do
           expect {
             cell.evolve(3)
           }.to change { cell.alive? }.from(false).to(true)
+        end
+      end
+      
+      context "with >=4 neighbours" do
+        it "stays dead" do
+          cell.evolve(4)
+          cell.should_not be_alive
         end
       end
     end
