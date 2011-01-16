@@ -209,12 +209,12 @@ describe Grid, "class" do
 end
 
 describe Grid do
-  let(:cell_0_0) { mock("Cell (0,0)") }
-  let(:cell_1_0) { mock("Cell (1,0)") }
-  let(:cell_2_0) { mock("Cell (2,0)") }
-  let(:cell_0_1) { mock("Cell (0,1)", become_alive: nil) }
-  let(:cell_1_1) { mock("Cell (1,1)") }
-  let(:cell_2_1) { mock("Cell (2,1)") }
+  let(:cell_0_0) { mock("Cell (0,0)", alive?: false) }
+  let(:cell_1_0) { mock("Cell (1,0)", alive?: false) }
+  let(:cell_2_0) { mock("Cell (2,0)", alive?: false) }
+  let(:cell_0_1) { mock("Cell (0,1)", alive?: false, become_alive: nil) }
+  let(:cell_1_1) { mock("Cell (1,1)", alive?: false) }
+  let(:cell_2_1) { mock("Cell (2,1)", alive?: false) }
   
   let(:cloned_grid) { mock("Cloned Grid", evolve_from: nil) }
   
