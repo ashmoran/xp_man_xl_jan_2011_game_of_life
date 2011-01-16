@@ -20,7 +20,7 @@ class Game
   end
   
   def start
-    grid.evolve
+    @grid.evolve
   end
 end
 
