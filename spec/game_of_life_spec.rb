@@ -37,7 +37,7 @@ class Grid
 end
 
 class Cell
-  
+
 end
 
 describe Grid, "class" do
@@ -50,6 +50,14 @@ describe Grid, "class" do
 end
 
 describe Grid do
+  let(:cell_0_0) { mock("Cell (0,0)") }
+  let(:cell_0_1) { mock("Cell (0,1)") }
+  let(:cell_1_0) { mock("Cell (1,0)") }
+  let(:cell_1_1) { mock("Cell (1,1)") }
+  
+  before(:each) do
+    Cell.stub(:new).and_return(cell_0_0, cell_0_1, cell_1_0, cell_1_1)
+  end
   let(:grid) { Grid.new(2, 2) }
 
   it "should have all cells empty" do
