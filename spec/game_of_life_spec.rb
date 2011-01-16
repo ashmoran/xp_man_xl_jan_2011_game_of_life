@@ -80,6 +80,7 @@ describe Cell do
     end
   end
   
+  # This code largely copied from the pairing session with Jimmbob
   describe "evolve" do
     context "a living cell" do
       before(:each) { cell.become_alive }
