@@ -302,8 +302,8 @@ describe Grid do
   
   describe "#update_from_representation" do
     it "sets cells to alive where the representation has a true value" do
-      cell_2_0.stub(alive?: true)
-      cell_1_1.stub(alive?: true)
+      cell_2_0.should_receive(:become_alive)
+      cell_1_1.should_receive(:become_alive)
       grid.update_from_representation(
         [
           [false, false, true],
