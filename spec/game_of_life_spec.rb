@@ -167,7 +167,7 @@ describe Grid do
   let(:cell_1_1) { mock("Cell (1,1)") }
   let(:cell_2_1) { mock("Cell (2,1)") }
   
-  let(:cloned_grid) { mock("Cloned Grid") }
+  let(:cloned_grid) { mock("Cloned Grid", evolve_from: nil) }
   
   before(:each) do
     Grid.stub(clone_from_cells: cloned_grid)
@@ -215,7 +215,7 @@ describe Game, "with custom grid" do
       all_cells_empty?: true,
       make_alive: :ignored_value,
       representation: grid_representation,
-      evolve: mock("Evolved Grid", representation: evolved_grid_representation, evolve_from: nil)
+      evolve: mock("Evolved Grid", representation: evolved_grid_representation)
     )
   }
   let(:grid_representation) { mock("grid_representation") }
