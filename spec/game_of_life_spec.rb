@@ -39,9 +39,6 @@ describe Grid, "class" do
 end
 
 describe Grid do
-  before(:each) do
-    pending
-  end
   let(:grid) { Grid.new(2, 2) }
 
   it "should have all cells empty" do
@@ -50,7 +47,7 @@ describe Grid do
   
   describe "#make_alive" do
     it "makes a cell alive" do
-      
+      pending
     end      
   end
 end
