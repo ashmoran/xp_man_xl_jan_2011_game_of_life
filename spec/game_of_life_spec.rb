@@ -380,3 +380,42 @@ describe Game, "with custom grid" do
     end
   end
 end
+
+describe "Game of Life" do
+  let(:grid) { Grid.new(5, 5) }
+  let(:game) { Game.new(grid) }
+  
+  it "plays a Blinker" do
+    [[1, 3], [2, 3], [3, 3]].each do |x, y|
+      game.make_alive(x, y)
+    end
+    
+    game.representation.should eq [
+      [ false, false, false, false, false ],
+      [ false, false, false, false, false ],
+      [ false, true,  true,  true,  false ],
+      [ false, false, false, false, false ],
+      [ false, false, false, false, false ]
+    ]
+    
+    game.start
+    
+    game.representation.should eq [
+      [ false, false, false, false, false ],
+      [ false, false, true,  false, false ],
+      [ false, false, true,  false, false ],
+      [ false, false, true,  false, false ],
+      [ false, false, false, false, false ]
+    ]
+    
+    game.start
+    
+    game.representation.should eq [
+      [ false, false, false, false, false ],
+      [ false, false, false, false, false ],
+      [ false, true,  true,  true,  false ],
+      [ false, false, false, false, false ],
+      [ false, false, false, false, false ]
+    ]
+  end
+end
