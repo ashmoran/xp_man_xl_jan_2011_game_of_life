@@ -47,16 +47,32 @@ class Grid
   def neighbours(x, y)
     cell_neighbours = [ ]
     
-    collect_cell(cell_neighbours, x + 1, y)
-    collect_cell(cell_neighbours, x, y + 1)
-    collect_cell(cell_neighbours, x + 1, y + 1)
-    collect_cell(cell_neighbours, x - 1, y + 1)
-    collect_cell(cell_neighbours, x + 1, y - 1)
-    collect_cell(cell_neighbours, x - 1, y)
-    collect_cell(cell_neighbours, x, y - 1)
-    collect_cell(cell_neighbours, x - 1, y - 1)
+    neighbour_points(x, y).each do |neighbour_x, neighbour_y|
+      collect_cell(cell_neighbours, x + 1, y)
+    end
+    # collect_cell(cell_neighbours, x + 1, y)
+    # collect_cell(cell_neighbours, x, y + 1)
+    # collect_cell(cell_neighbours, x + 1, y + 1)
+    # collect_cell(cell_neighbours, x - 1, y + 1)
+    # collect_cell(cell_neighbours, x + 1, y - 1)
+    # collect_cell(cell_neighbours, x - 1, y)
+    # collect_cell(cell_neighbours, x, y - 1)
+    # collect_cell(cell_neighbours, x - 1, y - 1)
     
     cell_neighbours
+  end
+  
+  def neighbour_points
+    [
+      [x + 1, y],
+      [x, y + 1],
+      [x + 1, y + 1],
+      [x - 1, y + 1],
+      [x + 1, y - 1],
+      [x - 1, y],
+      [x, y - 1],
+      [x - 1, y - 1]
+    ]
   end
   
   def make_alive(x, y)
