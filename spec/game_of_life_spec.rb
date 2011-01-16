@@ -188,7 +188,8 @@ describe Grid do
     end
     
     it "returns the new grid" do
-      evolve
+      pending
+      grid.evolve
     end
   end
 end
