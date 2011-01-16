@@ -25,7 +25,9 @@ class Game
 end
 
 class Grid
-  
+  def all_cells_empty?
+    true
+  end
 end
 
 describe Grid do
