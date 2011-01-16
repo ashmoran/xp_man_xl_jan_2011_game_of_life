@@ -45,7 +45,7 @@ class Grid
   end
   
   def neighbours(x, y)
-    [ ]
+    [ @cells[y][x + 1], @cells[y + 1][x], @cells[y + 1][x + 1] ]
   end
   
   def make_alive(x, y)
