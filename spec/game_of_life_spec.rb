@@ -287,8 +287,8 @@ describe Grid do
   
   describe "#representation" do
     it "returns an array describing the grid" do
-      grid.make_alive(2, 0)
-      grid.make_alive(1, 1)
+      cell_2_0.stub(alive?: true)
+      cell_1_1.stub(alive?: true)
       grid.representation.should eq [
         [true, false, true],
         [false, true, false]
