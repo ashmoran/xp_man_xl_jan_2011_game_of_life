@@ -299,6 +299,19 @@ describe Grid do
       ]
     end
   end
+  
+  describe "#update_from_representation" do
+    it "sets cells to alive where the representation has a true value" do
+      cell_2_0.stub(alive?: true)
+      cell_1_1.stub(alive?: true)
+      grid.update_from_representation(
+        [
+          [false, false, true],
+          [false, true, false]
+        ]
+      )
+    end
+  end
 end
   
 describe Game, "with custom grid" do
