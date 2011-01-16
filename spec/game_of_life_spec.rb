@@ -44,7 +44,11 @@ class Grid
   end
   
   def evolve_from(reference_grid)
-    
+    @cells.each_with_index do |row, y|
+      row.each_with_index do |cell, x|
+        cell.evolve(reference_grid.neighbours)
+      end      
+    end
   end
 end
 
