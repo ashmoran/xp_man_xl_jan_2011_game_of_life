@@ -25,6 +25,12 @@ class Game
 end
 
 class Grid
+  def initialize(*)
+    4.times do
+      Cell.new
+    end
+  end
+  
   def all_cells_empty?
     true
   end
