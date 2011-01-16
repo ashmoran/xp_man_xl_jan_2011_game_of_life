@@ -4,7 +4,7 @@ class Cell
   end
   
   def evolve(neighbours)
-    @state = evolution_function[neighbours.count { |neighbour| neighbour.alive? } ] ? :alive : :dead
+    @state = (evolution_function[neighbours.count { |neighbour| neighbour.alive? } ] ? :alive : :dead)
   end
     
   def become_alive
