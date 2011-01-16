@@ -122,10 +122,9 @@ describe Cell do
     
     context "a dead cell" do
       context "with 2 neighbours" do
-        it "springs into life" do
-          expect {
-            cell.evolve(2)
-          }.to_not change { cell.alive? }.from(false).to(true)
+        it "stays dead" do
+          cell.evolve(2)
+          cell.should_not be_alive
         end
       end
 
