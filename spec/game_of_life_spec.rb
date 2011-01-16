@@ -30,13 +30,28 @@ class Grid
   end
 end
 
-describe Grid do
-  context "in default new state" do
-    let(:grid) { Grid.new }
-  
-    it "should have all cells empty" do
-      grid.all_cells_empty?.should be_true
+describe Grid, "class" do
+  describe "#new" do
+    it "creates Cells" do
+      
     end
+  end
+end
+
+describe Grid do
+  before(:each) do
+    pending
+  end
+  let(:grid) { Grid.new(2, 2) }
+
+  it "should have all cells empty" do
+    grid.all_cells_empty?.should be_true
+  end
+  
+  describe "#make_alive" do
+    it "makes a cell alive" do
+      
+    end      
   end
 end
 
