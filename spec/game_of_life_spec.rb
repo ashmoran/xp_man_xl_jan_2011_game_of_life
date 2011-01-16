@@ -281,6 +281,12 @@ describe Grid do
       grid.evolve_from(reference_grid)
     end
   end
+  
+  describe "#representation" do
+    it "returns an array describing the grid" do
+      pending
+    end
+  end
 end
   
 describe Game, "with custom grid" do
