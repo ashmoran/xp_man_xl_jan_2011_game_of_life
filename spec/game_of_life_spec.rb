@@ -57,8 +57,8 @@ class Cell
     @alive = false
   end
   
-  def evolve(number_of_neighbours)
-    @alive = evolution_function[number_of_neighbours]
+  def evolve(neighbours)
+    @alive = evolution_function[neighbours.count { |neighbour| neighbour.alive? } ]
   end
     
   def become_alive
