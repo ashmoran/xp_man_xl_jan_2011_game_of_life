@@ -278,6 +278,12 @@ describe Grid do
     end
   end
   
+  describe "#neighbours" do
+    it "returns neighbours of the top-left corner" do
+      grid.neighbours(0, 0).should =~ [ cell_1_0, cell_0_1, cell_1_1 ]
+    end
+  end
+  
   describe "#evolve_from" do
     let(:reference_grid) { mock("Reference Grid") }
     it "tell each cell to evolve" do
