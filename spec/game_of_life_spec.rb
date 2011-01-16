@@ -18,6 +18,10 @@ class Game
   def grid_representation
     @grid.representation
   end
+  
+  def start
+    grid.evolve
+  end
 end
 
 describe Game, pending: true do
