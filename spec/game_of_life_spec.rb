@@ -47,14 +47,14 @@ class Grid
   def neighbours(x, y)
     cell_neighbours = [ ]
     
-    cell_neighbours << @cells[y][x + 1] if valid_point?(x + 1, y)
-    cell_neighbours << @cells[y + 1][x] if valid_point?(x, y + 1)
-    cell_neighbours << @cells[y + 1][x + 1] if valid_point?(x + 1, y + 1)
-    cell_neighbours << @cells[y + 1][x - 1] if valid_point?(x - 1, y + 1)
-    cell_neighbours << @cells[y - 1][x + 1] if valid_point?(x + 1, y - 1)
-    cell_neighbours << @cells[y][x - 1] if valid_point?(x - 1, y)
-    cell_neighbours << @cells[y - 1][x] if valid_point?(x, y - 1)
-    cell_neighbours << @cells[y - 1][x - 1] if valid_point?(x - 1, y - 1)
+    collect_cell(cell_neighbours, y, x + 1)
+    collect_cell(cell_neighbours, y + 1, x)
+    collect_cell(cell_neighbours, y + 1, x + 1)
+    collect_cell(cell_neighbours, y + 1, x - 1)
+    collect_cell(cell_neighbours, y - 1, x + 1)
+    collect_cell(cell_neighbours, y, x - 1)
+    collect_cell(cell_neighbours, y - 1, x)
+    collect_cell(cell_neighbours, y - 1, x - 1)
     
     cell_neighbours
   end
@@ -93,6 +93,10 @@ class Grid
   
   def valid_point?(x, y)
     (0 ... width).include?(x) && (0 ... height).include?(y)
+  end
+  
+  def collect_cell(collection, x, y)
+    @cells[y][x] if valid_point?(x, y)
   end
 end
 
