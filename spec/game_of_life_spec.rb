@@ -302,13 +302,18 @@ describe Grid do
       grid.neighbours(0, 0).should =~ [ cell_1_0, cell_0_1, cell_1_1 ]
     end
     
-    it "returns neighbours of the bottom-right corner" do
-      grid.neighbours(2, 1).should =~ [ cell_1_1, cell_2_0, cell_1_0 ]
-    end
-    
     it "returns neighbours of the top-right corner" do
       p grid.neighbours(2, 0)
       grid.neighbours(2, 0).should =~ [ cell_1_0, cell_2_1, cell_1_1 ]
+    end
+    
+    it "returns neighbours of the bottom-left corner" do
+      p grid.neighbours(0, 1)
+      grid.neighbours(0, 1).should =~ [ cell_0_0, cell_1_1, cell_1_0 ]
+    end
+    
+    it "returns neighbours of the bottom-right corner" do
+      grid.neighbours(2, 1).should =~ [ cell_1_1, cell_2_0, cell_1_0 ]
     end
   end
   
