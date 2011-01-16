@@ -30,6 +30,10 @@ class Grid
   end
 end
 
+class Cell
+  
+end
+
 describe Grid, "class" do
   describe "#new" do
     it "creates Cells" do
