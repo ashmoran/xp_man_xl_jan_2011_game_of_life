@@ -19,13 +19,11 @@ class Grid
   end
   
   def neighbours(x, y)
-    cell_neighbours = [ ]
-    
-    neighbour_points(x, y).each do |neighbour_x, neighbour_y|
-      collect_cell(cell_neighbours, neighbour_x, neighbour_y)
+    [ ].tap do |cell_neighbours|
+      neighbour_points(x, y).each do |neighbour_x, neighbour_y|
+        collect_cell(cell_neighbours, neighbour_x, neighbour_y)
+      end      
     end
-    
-    cell_neighbours
   end
   
   def neighbour_points(x, y)
