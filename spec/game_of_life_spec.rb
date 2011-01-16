@@ -211,11 +211,11 @@ describe Grid do
     let(:reference_grid) { mock("Reference Grid", neighbours: [ :foo ]) }
     it "asks the reference grid for the neighbours of each cell" do
       reference_grid.should_receive(:neighbours).with(0, 0).and_return(:neighbours_of_0_0)
-      reference_grid.should_receive(:neighbours).with(1, 0).and_return(:neighbours_of_0_0)
-      reference_grid.should_receive(:neighbours).with(2, 0).and_return(:neighbours_of_0_0)
-      reference_grid.should_receive(:neighbours).with(0, 1).and_return(:neighbours_of_0_0)
-      reference_grid.should_receive(:neighbours).with(1, 1).and_return(:neighbours_of_0_0)
-      reference_grid.should_receive(:neighbours).with(2, 1).and_return(:neighbours_of_0_0)
+      reference_grid.should_receive(:neighbours).with(1, 0).and_return(:neighbours_of_1_0)
+      reference_grid.should_receive(:neighbours).with(2, 0).and_return(:neighbours_of_2_0)
+      reference_grid.should_receive(:neighbours).with(0, 1).and_return(:neighbours_of_0_1)
+      reference_grid.should_receive(:neighbours).with(1, 1).and_return(:neighbours_of_1_1)
+      reference_grid.should_receive(:neighbours).with(2, 1).and_return(:neighbours_of_2_1)
     end
   end
 end
