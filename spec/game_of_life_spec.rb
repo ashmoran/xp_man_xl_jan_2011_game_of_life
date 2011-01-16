@@ -63,11 +63,7 @@ class Grid
   end
   
   def representation
-    @cells.map do |row|
-      row.map do |cell|
-        cell.alive?
-      end      
-    end
+    @cells.map { |row| row.map { |cell| cell.alive? } }
   end
 end
 
