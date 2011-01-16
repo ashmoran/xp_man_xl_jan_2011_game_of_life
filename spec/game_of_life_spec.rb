@@ -82,9 +82,17 @@ describe Game, "with custom grid" do
   end
   
   describe "#start" do
-    it "evolves the game state by evolving the grid" do
+    it "evolves the grid" do
       grid.should_receive(:evolve)
       game.start
+    end
+    
+    it "evolves the game state" do
+      expect {
+        game.start
+      }.to change {
+        game.grid_representation
+      }.from(grid_representation).to(evolved_grid_representation)
     end
   end
 end
