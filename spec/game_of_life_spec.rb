@@ -47,18 +47,11 @@ class Grid
   def neighbours(x, y)
     cell_neighbours = [ ]
     
-    # Top-left
-    cell_neighbours << @cells[y][x + 1] if x + 1 < width
+    cell_neighbours << @cells[y][x + 1] if valid_point?(y, x + 1)
     cell_neighbours << @cells[y + 1][x] if y + 1 < height
     cell_neighbours << @cells[y + 1][x + 1] if x + 1 < width && y + 1 < height
-    
-    # Top-right
     cell_neighbours << @cells[y + 1][x - 1] if y + 1 < height && x - 1 >= 0
-    
-    # Bottom-left
     cell_neighbours << @cells[y - 1][x + 1] if x + 1 < width && y - 1 >= 0
-
-    # Bottom-right
     cell_neighbours << @cells[y][x - 1] if x - 1 >= 0
     cell_neighbours << @cells[y - 1][x] if y - 1 >= 0
     cell_neighbours << @cells[y - 1][x - 1] if x - 1 >= 0 && y - 1 >= 0
