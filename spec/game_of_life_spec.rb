@@ -29,7 +29,13 @@ class Grid
 end
 
 describe Grid do
+  context "in default new state" do
+    let(:grid) { Grid.new }
+  end
   
+  it "should have all cells empty" do
+    grid.all_cells_empty?.should be_true
+  end
 end
 
 describe Game, pending: true do
