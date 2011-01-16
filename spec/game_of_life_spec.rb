@@ -183,6 +183,10 @@ describe Grid, "class" do
     }
     let(:new_grid) { mock(Grid, update_from_representation: nil) }
     
+    before(:each) do
+      Grid.stub(new: new_grid)
+    end
+    
     it "creates a new grid" do
       Grid.should_receive(:new).with(3, 2).and_return(new_grid)
       Grid.clone_from(reference_grid)
