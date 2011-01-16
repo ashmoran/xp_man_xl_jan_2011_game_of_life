@@ -286,6 +286,9 @@ describe Grid do
     it "returns neighbours of the top-left corner" do
       grid.neighbours(0, 0).should =~ [ cell_1_0, cell_0_1, cell_1_1 ]
     end
+    it "returns neighbours of the bottom-right corner" do
+      grid.neighbours(3, 2).should =~ [ cell_2_2, cell_3_1, cell_2_1 ]
+    end
   end
   
   describe "#evolve_from" do
