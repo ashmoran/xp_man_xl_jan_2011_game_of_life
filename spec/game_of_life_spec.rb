@@ -215,7 +215,7 @@ describe Game, "with custom grid" do
       all_cells_empty?: true,
       make_alive: :ignored_value,
       representation: grid_representation,
-      evolve: mock("Evolved Grid", representation: evolved_grid_representation)
+      evolve: mock("Evolved Grid", representation: evolved_grid_representation, evolve_from: nil)
     )
   }
   let(:grid_representation) { mock("grid_representation") }
