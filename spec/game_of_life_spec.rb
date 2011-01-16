@@ -175,7 +175,7 @@ describe Grid do
   describe "#make_alive" do
     it "makes a cell alive" do
       cell_1_0.should_receive(:become_alive)
-      grid.make_alive(1, 0)
+      grid.make_alive(2, 1)
     end      
   end
   
