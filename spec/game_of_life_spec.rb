@@ -47,14 +47,14 @@ class Grid
   def neighbours(x, y)
     cell_neighbours = [ ]
     
-    collect_cell(cell_neighbours, y, x + 1)
-    collect_cell(cell_neighbours, y + 1, x)
-    collect_cell(cell_neighbours, y + 1, x + 1)
-    collect_cell(cell_neighbours, y + 1, x - 1)
-    collect_cell(cell_neighbours, y - 1, x + 1)
-    collect_cell(cell_neighbours, y, x - 1)
-    collect_cell(cell_neighbours, y - 1, x)
-    collect_cell(cell_neighbours, y - 1, x - 1)
+    cell_neighbours << collect_cell(cell_neighbours, x + 1, y) if valid_point?(x + 1, y)
+    cell_neighbours << collect_cell(cell_neighbours, x, y + 1) if valid_point?(x, y + 1)
+    cell_neighbours << collect_cell(cell_neighbours, x + 1, y + 1) if valid_point?(x + 1, y + 1)
+    cell_neighbours << collect_cell(cell_neighbours, x - 1, y + 1) if valid_point?(x - 1, y + 1)
+    cell_neighbours << collect_cell(cell_neighbours, x + 1, y - 1) if valid_point?(x + 1, y - 1)
+    cell_neighbours << collect_cell(cell_neighbours, x - 1, y) if valid_point?(x - 1, y)
+    cell_neighbours << collect_cell(cell_neighbours, x, y - 1) if valid_point?(x, y - 1)
+    cell_neighbours << collect_cell(cell_neighbours, x - 1, y - 1) if valid_point?(x - 1, y - 1)
     
     cell_neighbours
   end
