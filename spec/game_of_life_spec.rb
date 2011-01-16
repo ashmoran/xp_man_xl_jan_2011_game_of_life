@@ -298,7 +298,7 @@ describe Grid do
       cell_2_0.stub(alive?: true)
       cell_1_1.stub(alive?: true)
       grid.representation.should eq [
-        [true, false, true],
+        [false, false, true],
         [false, true, false]
       ]
     end
