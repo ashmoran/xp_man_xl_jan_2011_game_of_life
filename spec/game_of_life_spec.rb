@@ -301,6 +301,7 @@ describe Grid do
     end
     
     it "returns neighbours of the bottom-right corner" do
+      p grid.neighbours(3, 1)
       grid.neighbours(3, 1).should =~ [ cell_2_1, cell_2_0, cell_1_0 ]
     end
   end
