@@ -66,7 +66,8 @@ describe Grid do
   
   describe "#make_alive" do
     it "makes a cell alive" do
-      pending
+      cell_1_0.should_receive(:become_alive)
+      grid.make_alive(1, 0)
     end      
   end
 end
