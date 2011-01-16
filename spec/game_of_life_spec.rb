@@ -40,10 +40,12 @@ end
 describe Game, "with custom grid" do
   let(:grid_representation) { mock("grid_representation") }
   let(:grid) {
-    mock("Grid", 
-          all_cells_empty?: true,
-          make_alive: :ignored_value,
-          representation: grid_representation)
+    mock(
+      "Grid", 
+      all_cells_empty?: true,
+      make_alive: :ignored_value,
+      representation: grid_representation
+    )
   }
   let(:game) { Game.new(grid) }
   
