@@ -171,8 +171,23 @@ describe Grid, "class" do
   end
   
   describe "#clone_from" do
+    let(:reference_grid) {
+      mock(Grid, width: 3, height: 2, reference_grid_representation: mock("Reference Grid Representation"))
+    }
+    let(:new_grid) { mock(Grid, update_from_representation: nil) }
+    
     it "creates a new grid" do
-      pending
+      Grid.should_receive(:new).with(3, 2).and_return(new_grid)
+      Grid.clone_from(reference_grid)
+    end
+    
+    it "updates the new grid" do
+      new_grid.should_receive(:update_from_representation).with(reference_grid_representation)
+      Grid.clone_from(reference_grid)
+    end
+    
+    it "returns the new grid" do
+      Grid.clone_from(reference_grid).should eq new_grid
     end
   end
 end
@@ -198,6 +213,18 @@ describe Grid do
 
   it "should have all cells empty" do
     grid.all_cells_empty?.should be_true
+  end
+  
+  describe "#width" do
+    it "returns the width" do
+      pending
+    end
+  end
+  
+  describe "#height" do
+    it "returns the height" do
+      pending
+    end
   end
   
   describe "#make_alive" do
