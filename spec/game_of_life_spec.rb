@@ -46,7 +46,7 @@ class Grid
   def evolve_from(reference_grid)
     @cells.each_with_index do |row, y|
       row.each_with_index do |cell, x|
-        cell.evolve(reference_grid.neighbours)
+        cell.evolve(reference_grid.neighbours(x, y))
       end      
     end
   end
@@ -226,7 +226,7 @@ describe Grid do
   end
   
   describe "#evolve_from" do
-    let(:reference_grid) { mock("Reference Grid", neighbours: [ :foo ]) }
+    let(:reference_grid) { mock("Reference Grid") }
     it "tell each cell to evolve" do
       reference_grid.should_receive(:neighbours).with(0, 0).and_return(:neighbours_of_0_0)
       reference_grid.should_receive(:neighbours).with(1, 0).and_return(:neighbours_of_1_0)
