@@ -91,7 +91,7 @@ class Grid
   
   private
   
-  def valid_point(x, y)
+  def valid_point?(x, y)
     x < width
   end
 end
