@@ -96,7 +96,7 @@ class Grid
   end
   
   def collect_cell(collection, x, y)
-    @cells[y][x] if valid_point?(x, y)
+    collection << @cells[y][x] if valid_point?(x, y)
   end
 end
 
