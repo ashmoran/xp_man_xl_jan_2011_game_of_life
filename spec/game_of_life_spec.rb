@@ -16,7 +16,7 @@ class Game
   end
   
   def grid_representation
-    grid.representation
+    @grid.representation
   end
 end
 
