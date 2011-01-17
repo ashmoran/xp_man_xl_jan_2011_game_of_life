@@ -9,9 +9,7 @@ class Cell
   }
   
   def evolve(neighbours)
-    new_state(neighbours).tap do |state|
-      become state if state
-    end
+    become new_state(neighbours)
   end
     
   def become_alive
@@ -25,6 +23,7 @@ class Cell
   private
   
   def become(state)
+    return unless state
     @state = state
     @evolver = EVOLVERS[state]
   end
