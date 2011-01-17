@@ -9,7 +9,7 @@ class Cell
   }
   
   def evolve(neighbours)
-    @state = EVOLVERS[@state][neighbours.count { |neighbour| neighbour.alive? }] or return
+    @state = (EVOLVERS[@state][neighbours.count { |neighbour| neighbour.alive? }] or return)
   end
     
   def become_alive
