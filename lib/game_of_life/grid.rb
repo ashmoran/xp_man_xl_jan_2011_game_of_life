@@ -19,9 +19,7 @@ class Grid
   end
   
   def neighbours(point)
-    point.neighbours(width, height).map { |neighbour|
-      @cells[neighbour.y][neighbour.x]
-    }
+    point.neighbours(width, height).map { |neighbour| @cells[neighbour.y][neighbour.x] }
   end
   
   def make_alive(x, y)
@@ -67,14 +65,9 @@ class Grid
   class Point < Struct.new(:x, :y)
     def neighbours(width, height)
       [
-        [x - 1, y - 1],
-        [x - 1, y],
-        [x - 1, y + 1],
-        [x, y - 1],
-        [x, y + 1],
-        [x + 1, y - 1],
-        [x + 1, y],
-        [x + 1, y + 1]
+        [x - 1, y - 1], [x, y - 1], [x + 1, y - 1],
+        [x - 1, y],                 [x + 1, y],
+        [x - 1, y + 1], [x, y + 1], [x + 1, y + 1]
       ].map { |nx, ny|
         Point.new(nx, ny)
       }.select { |neighbour|
