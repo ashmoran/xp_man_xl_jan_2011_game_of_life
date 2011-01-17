@@ -85,7 +85,7 @@ class Grid
     end
   end
   
-  def valid_point?(x, y)
+  def valid_point?(point)
     point.exists_within?(width, height)
   end
   
