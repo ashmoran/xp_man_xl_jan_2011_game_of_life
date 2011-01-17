@@ -19,16 +19,11 @@ class Grid
   end
   
   def neighbours(x, y)
-      Point.new(x, y).neighbours.select do |neighbour|
-        neighbour.exists_within?(width, height)
-      end.map { |neighbour|
-        @cells[neighbour.y][neighbour.x]
-      }
-    # [ ].tap do |cell_neighbours|
-    #   # Point.new(x, y).neighbours.each do |neighbour_point|
-    #   #   collect_cell(cell_neighbours, neighbour_point)
-    #   # end      
-    # end
+    Point.new(x, y).neighbours.select do |neighbour|
+      neighbour.exists_within?(width, height)
+    end.map { |neighbour|
+      @cells[neighbour.y][neighbour.x]
+    }
   end
   
   def make_alive(x, y)
