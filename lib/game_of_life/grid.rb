@@ -87,7 +87,7 @@ class Grid
   
   def valid_point?(x, y)
     point = Point.new(x, y)
-    point.exists_within?(self)
+    point.exists_within?(width, height)
   end
   
   def collect_cell(collection, x, y)
