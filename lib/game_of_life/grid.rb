@@ -62,14 +62,20 @@ class Grid
   end
   
   def update_from_representation(representation)
-    @cells.each_with_index do |row, y|
-      row.each_with_index do |cell, x|
-        cell.become_alive if representation[y][x]
-      end      
+    each_cell do |x, y|
+      cell.evolve(reference_grid.neighbours(x, y))
     end
   end
   
   private
+  
+  def each_cell(x, y)
+    @cells.each_with_index do |row, y|
+      row.each_with_index do |cell, x|
+        yield(x, y)
+      end      
+    end
+  end
   
   def generate_cells
     (0...@height).map {
