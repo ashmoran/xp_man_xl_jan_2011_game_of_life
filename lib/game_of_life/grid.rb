@@ -62,7 +62,7 @@ class Grid
   end
   
   def update_from_representation(representation)
-    each_cell do |x, y|
+    each_cell do |cell, x, y|
       cell.evolve(reference_grid.neighbours(x, y))
     end
   end
@@ -72,7 +72,7 @@ class Grid
   def each_cell
     @cells.each_with_index do |row, y|
       row.each_with_index do |cell, x|
-        yield(x, y)
+        yield(cell, x, y)
       end      
     end
   end
