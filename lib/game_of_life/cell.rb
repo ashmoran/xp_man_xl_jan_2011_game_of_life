@@ -4,12 +4,12 @@ class Cell
   end
   
   EVOLVERS = {
-    alive: ->(neighbours) { :dead unless neighbours == 2 || neighbours == 3},
+    alive: ->(neighbours) { :dead unless neighbours == 2 || neighbours == 3 },
     dead:  ->(neighbours) { :alive if neighbours == 3 }
   }
   
   def evolve(neighbours)
-    @state = (EVOLVERS[@state][neighbours.count { |neighbour| neighbour.alive? }] or return)
+    @state = (EVOLVERS[@state][number_of_living(neighbours)] or return)
   end
     
   def become_alive
@@ -18,5 +18,11 @@ class Cell
   
   def alive?
     @state == :alive
+  end
+  
+  private
+  
+  def number_of_living(neighbours)
+    neighbours.count { |neighbour| neighbour.alive? }
   end
 end
