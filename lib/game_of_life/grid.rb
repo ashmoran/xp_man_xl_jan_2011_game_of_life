@@ -86,12 +86,4 @@ class Grid
       }
     end
   end
-  
-  def valid_point?(point)
-    point.exists_within?(width, height)
-  end
-  
-  def collect_cell(collection, point)
-    collection << @cells[point.y][point.x] if valid_point?(point)
-  end
 end
