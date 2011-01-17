@@ -55,11 +55,7 @@ class Grid
   end
   
   def generate_cells
-    (0...@height).map {
-      (0...@width).map {
-        Cell.new
-      }
-    }
+    Array.new(@height, Array.new(@width) { Cell.new })
   end
   
   class Point < Struct.new(:x, :y)
