@@ -20,8 +20,7 @@ class Grid
   
   def neighbours(x, y)
     [ ].tap do |cell_neighbours|
-      neighbour_points(x, y).each do |neighbour_x, neighbour_y|
-        neighbour_point = Point.new(neighbour_x, neighbour_y)
+      neighbour_points(x, y).each do |neighbour_point|
         collect_cell(cell_neighbours, neighbour_point)
       end      
     end
@@ -37,7 +36,7 @@ class Grid
       [x + 1, y - 1],
       [x + 1, y],
       [x + 1, y + 1]
-    ]
+    ].map { |x, y| Point.new(x, y) }
   end
   
   def make_alive(x, y)
