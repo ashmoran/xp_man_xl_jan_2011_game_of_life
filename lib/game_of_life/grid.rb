@@ -35,7 +35,7 @@ class Grid
   end
   
   def evolve_from(reference_grid)
-    each_cell { |cell, x, y| cell.evolve(reference_grid.neighbours(x, y)) }
+    each_cell { |cell, x, y| cell.evolve(reference_grid.neighbours(Point.new(x, y))) }
   end
   
   def representation
