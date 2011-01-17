@@ -19,9 +19,7 @@ class Grid
   end
   
   def neighbours(x, y)
-    Point.new(x, y).neighbours.select { |neighbour|
-      neighbour.exists_within?(width, height)
-    }.map { |neighbour|
+    Point.new(x, y).neighbours(width, height).map { |neighbour|
       @cells[neighbour.y][neighbour.x]
     }
   end
@@ -71,7 +69,7 @@ class Grid
       (0 ... width).include?(x) && (0 ... height).include?(y)
     end
     
-    def neighbours
+    def neighbours(width, height)
       [
         [x - 1, y - 1],
         [x - 1, y],
@@ -81,7 +79,9 @@ class Grid
         [x + 1, y - 1],
         [x + 1, y],
         [x + 1, y + 1]
-      ].map { |nx, ny| Point.new(nx, ny) }
+      ].map { |nx, ny| Point.new(nx, ny) }.select { |neighbour|
+        neighbour.exists_within?(width, height)
+      }
     end
   end
   
