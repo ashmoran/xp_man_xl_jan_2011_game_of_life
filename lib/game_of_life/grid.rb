@@ -20,9 +20,12 @@ class Grid
   
   def neighbours(x, y)
     [ ].tap do |cell_neighbours|
-      Point.new(x, y).neighbours.each do |neighbour_point|
-        collect_cell(cell_neighbours, neighbour_point)
+      Point.new(x, y).neighbours.select do |neighbour|
+        neighbour.exists_within?(width, height)
       end      
+      # Point.new(x, y).neighbours.each do |neighbour_point|
+      #   collect_cell(cell_neighbours, neighbour_point)
+      # end      
     end
   end
   
