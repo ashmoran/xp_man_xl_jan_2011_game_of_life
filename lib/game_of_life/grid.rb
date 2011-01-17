@@ -27,7 +27,7 @@ class Grid
   end
   
   def neighbour_points(x, y)
-    Point.new(x, y).neighbour_points
+    Point.new(x, y).neighbours
   end
   
   def make_alive(x, y)
