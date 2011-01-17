@@ -21,7 +21,7 @@ class Grid
   def neighbours(x, y)
     [ ].tap do |cell_neighbours|
       neighbour_points(x, y).each do |neighbour_x, neighbour_y|
-        neighbour_point = Point.new(x, y)
+        neighbour_point = Point.new(neighbour_x, neighbour_y)
         collect_cell(cell_neighbours, neighbour_point)
       end      
     end
