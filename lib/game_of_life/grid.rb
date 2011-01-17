@@ -82,7 +82,7 @@ class Grid
       }
     end
     
-    private
+    protected
     
     def exists_within?(width, height)
       (0 ... width).include?(x) && (0 ... height).include?(y)
