@@ -36,7 +36,7 @@ class Grid
       [x + 1, y - 1],
       [x + 1, y],
       [x + 1, y + 1]
-    ].map { |x, y| Point.new(x, y) }
+    ].map { |nx, ny| Point.new(nx, ny) }
   end
   
   def make_alive(x, y)
