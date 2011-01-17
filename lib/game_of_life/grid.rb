@@ -90,6 +90,7 @@ class Grid
   end
   
   def collect_cell(collection, x, y)
-    collection << @cells[y][x] if valid_point?(Point.new(x, y))
+    point = Point.new(x, y)
+    collection << @cells[point.y][point.x] if valid_point?(point)
   end
 end
