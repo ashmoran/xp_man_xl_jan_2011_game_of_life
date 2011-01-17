@@ -21,7 +21,8 @@ class Grid
   def neighbours(x, y)
     [ ].tap do |cell_neighbours|
       neighbour_points(x, y).each do |neighbour_x, neighbour_y|
-        collect_cell(cell_neighbours, neighbour_x, neighbour_y)
+        neighbour_point = Point.new(x, y)
+        collect_cell(cell_neighbours, neighbour_point)
       end      
     end
   end
@@ -89,8 +90,7 @@ class Grid
     point.exists_within?(width, height)
   end
   
-  def collect_cell(collection, x, y)
-    point = Point.new(x, y)
+  def collect_cell(collection, point)
     collection << @cells[point.y][point.x] if valid_point?(point)
   end
 end
