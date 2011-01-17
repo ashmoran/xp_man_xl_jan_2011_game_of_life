@@ -65,10 +65,6 @@ class Grid
   end
   
   class Point < Struct.new(:x, :y)
-    def exists_within?(width, height)
-      (0 ... width).include?(x) && (0 ... height).include?(y)
-    end
-    
     def neighbours(width, height)
       [
         [x - 1, y - 1],
@@ -84,6 +80,12 @@ class Grid
       }.select { |neighbour|
         neighbour.exists_within?(width, height)
       }
+    end
+    
+    private
+    
+    def exists_within?(width, height)
+      (0 ... width).include?(x) && (0 ... height).include?(y)
     end
   end
 end
