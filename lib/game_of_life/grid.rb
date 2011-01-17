@@ -3,9 +3,9 @@ class Grid
   
   class << self
     def clone_from(reference_grid)
-      new_grid = new(reference_grid.width, reference_grid.height)
-      new_grid.update_from_representation(reference_grid.representation)
-      new_grid
+      new(reference_grid.width, reference_grid.height).tap do |new_grid|
+        new_grid.update_from_representation(reference_grid.representation)  
+      end
     end
   end
   
@@ -50,11 +50,7 @@ class Grid
   end
   
   def evolve_from(reference_grid)
-    @cells.each_with_index do |row, y|
-      row.each_with_index do |cell, x|
-        cell.evolve(reference_grid.neighbours(x, y))
-      end      
-    end
+    each_cell { |cell, x, y| cell.evolve(reference_grid.neighbours(x, y)) }
   end
   
   def representation
@@ -62,9 +58,7 @@ class Grid
   end
   
   def update_from_representation(representation)
-    each_cell do |cell, x, y|
-      cell.become_alive if representation[y][x]
-    end
+    each_cell { |cell, x, y| cell.become_alive if representation[y][x] }
   end
   
   private
