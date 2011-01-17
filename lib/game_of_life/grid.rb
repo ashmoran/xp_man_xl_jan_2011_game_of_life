@@ -79,7 +79,9 @@ class Grid
         [x + 1, y - 1],
         [x + 1, y],
         [x + 1, y + 1]
-      ].map { |nx, ny| Point.new(nx, ny) }.select { |neighbour|
+      ].map { |nx, ny|
+        Point.new(nx, ny)
+      }.select { |neighbour|
         neighbour.exists_within?(width, height)
       }
     end
