@@ -21,7 +21,7 @@ class Grid
   def neighbours(x, y)
       Point.new(x, y).neighbours.select do |neighbour|
         neighbour.exists_within?(width, height)
-      end.map { |point|
+      end.map { |neighbour|
         @cells[neighbour.y][neighbour.x]
       }
     # [ ].tap do |cell_neighbours|
