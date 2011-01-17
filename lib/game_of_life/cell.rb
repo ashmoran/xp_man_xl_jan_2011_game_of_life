@@ -26,10 +26,11 @@ class Cell
   
   def become(state)
     @state = state
+    @evolver = EVOLVERS[state]
   end
   
   def new_state(neighbours)
-    EVOLVERS[@state][number_of_living(neighbours)]
+    @evolver[number_of_living(neighbours)]
   end
   
   def number_of_living(neighbours)
