@@ -63,7 +63,7 @@ class Grid
   
   def update_from_representation(representation)
     each_cell do |cell, x, y|
-      cell.evolve(reference_grid.neighbours(x, y))
+      cell.become_alive if representation[y][x]
     end
   end
   
