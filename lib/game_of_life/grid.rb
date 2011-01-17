@@ -27,16 +27,7 @@ class Grid
   end
   
   def neighbour_points(x, y)
-    [
-      [x - 1, y - 1],
-      [x - 1, y],
-      [x - 1, y + 1],
-      [x, y - 1],
-      [x, y + 1],
-      [x + 1, y - 1],
-      [x + 1, y],
-      [x + 1, y + 1]
-    ].map { |nx, ny| Point.new(nx, ny) }
+    Point.new(x, y).neighbour_points
   end
   
   def make_alive(x, y)
@@ -82,6 +73,19 @@ class Grid
   class Point < Struct.new(:x, :y)
     def exists_within?(width, height)
       (0 ... width).include?(x) && (0 ... height).include?(y)
+    end
+    
+    def neighbours
+      [
+        [x - 1, y - 1],
+        [x - 1, y],
+        [x - 1, y + 1],
+        [x, y - 1],
+        [x, y + 1],
+        [x + 1, y - 1],
+        [x + 1, y],
+        [x + 1, y + 1]
+      ].map { |nx, ny| Point.new(nx, ny) }
     end
   end
   
