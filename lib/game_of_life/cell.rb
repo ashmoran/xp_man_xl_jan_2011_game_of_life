@@ -4,7 +4,7 @@ class Cell
   end
   
   EVOLVERS = {
-    alive: ->(neighbours) { :dead if neighbours == 2 || neighbours == 3},
+    alive: ->(neighbours) { :dead unless neighbours == 2 || neighbours == 3},
     dead:  ->(neighbours) { :alive if neighbours == 3 }
   }
   
