@@ -79,8 +79,13 @@ class Grid
     }
   end
   
+  class Point < Struct.new(:x, :y)
+    
+  end
+  
   def valid_point?(x, y)
-    (0 ... width).include?(x) && (0 ... height).include?(y)
+    point = Point.new(x, y)
+    (0 ... width).include?(point.x) && (0 ... height).include?(point.y)
   end
   
   def collect_cell(collection, x, y)
