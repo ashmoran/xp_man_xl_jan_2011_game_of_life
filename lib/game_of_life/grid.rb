@@ -69,7 +69,7 @@ class Grid
   
   private
   
-  def each_cell(x, y)
+  def each_cell
     @cells.each_with_index do |row, y|
       row.each_with_index do |cell, x|
         yield(x, y)
