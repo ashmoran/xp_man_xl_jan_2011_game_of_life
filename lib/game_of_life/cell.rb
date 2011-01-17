@@ -4,8 +4,8 @@ class Cell
   end
   
   EVOLVERS = {
-    alive: ->(neighbours) { neighbours == 2 || neighbours == 3 },
-    dead:  ->(neighbours) { neighbours == 3 }
+    alive: ->(neighbours) { neighbours == 2 || neighbours == 3 ? :alive : :dead},
+    dead:  ->(neighbours) { neighbours == 3 ? :alive : :dead }
   }
   
   def evolve(neighbours)
