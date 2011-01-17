@@ -9,7 +9,7 @@ class Cell
   }
   
   def evolve(neighbours)
-    @state = (EVOLVERS[@state][number_of_living(neighbours)] or return)
+    @state = (new_state(neighbours) or return)
   end
     
   def become_alive
@@ -21,6 +21,10 @@ class Cell
   end
   
   private
+  
+  def new_state(neighbours)
+    EVOLVERS[@state][number_of_living(neighbours)]
+  end
   
   def number_of_living(neighbours)
     neighbours.count { |neighbour| neighbour.alive? }
