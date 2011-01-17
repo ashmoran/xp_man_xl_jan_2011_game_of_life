@@ -1,6 +1,6 @@
 class Cell
   def initialize
-    @state = :dead
+    become :dead
   end
   
   EVOLVERS = {
