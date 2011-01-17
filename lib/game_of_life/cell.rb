@@ -15,7 +15,7 @@ class Cell
   end
     
   def become_alive
-    @state = :alive
+    become :alive
   end
   
   def alive?
