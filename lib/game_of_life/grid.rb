@@ -18,8 +18,8 @@ class Grid
     true
   end
   
-  def neighbours(x, y)
-    Point.new(x, y).neighbours(width, height).map { |neighbour|
+  def neighbours(point)
+    point.neighbours(width, height).map { |neighbour|
       @cells[neighbour.y][neighbour.x]
     }
   end
